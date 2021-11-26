@@ -9,10 +9,17 @@ import org.junit.jupiter.api.Test;
 public class MoneyTest {
 
   @Test
-  void testMultiplication() {
+  void testDollarMultiplication() {
     final Dollar five = new Dollar(5);
     assertEquals(new Dollar(10), five.times(2));
     assertEquals(new Dollar(15), five.times(3));
+  }
+
+  @Test
+  void testFrancMultiplication() {
+    final Franc five = new Franc(5);
+
+    assertEquals(new Franc(10), five.times(2));
   }
 
   @Test
