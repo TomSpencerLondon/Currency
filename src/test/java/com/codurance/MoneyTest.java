@@ -10,16 +10,13 @@ public class MoneyTest {
 
   @Test
   void testDollarMultiplication() {
-    final Dollar five = Money.dollar(5);
-    assertEquals(Money.dollar(10), five.times(2));
-    assertEquals(Money.dollar(15), five.times(3));
+    assertEquals(Money.dollar(10), Money.dollar(5).times(2));
+    assertEquals(Money.dollar(15), Money.dollar(5).times(3));
   }
 
   @Test
   void testFrancMultiplication() {
-    final Franc five = Money.franc(5);
-
-    assertEquals(Money.franc(10), five.times(2));
+    assertEquals(Money.franc(10), Money.franc(5).times(2));
   }
 
   @Test
