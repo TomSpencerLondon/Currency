@@ -24,6 +24,24 @@ public class MoneyTest {
   }
 
   @Test
+  void testPlusReturnsSum() {
+    final Money five = Money.dollar(5);
+    final Expression result = five.plus(five);
+    Sum sum = (Sum) result;
+
+    assertEquals(five, sum.augend);
+    assertEquals(five, sum.addend);
+  }
+
+  @Test
+  void testReduceSum() {
+    Expression sum = new Sum(Money.dollar(3), Money.dollar(4));
+    final Bank bank = new Bank();
+    final Money result = bank.reduce(sum, "USD");
+    assertEquals(Money.dollar(7), result);
+  }
+
+  @Test
   void testCurrency() {
     assertEquals("USD", Money.dollar(1).currency());
     assertEquals("CHF", Money.franc(1).currency());
