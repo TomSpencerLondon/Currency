@@ -17,14 +17,17 @@ public class Money {
     return new Franc(amount, "CHF");
   }
 
+  protected String currency() {
+    return this.currency;
+  }
+
   public boolean equals(Object object) {
     Money money = (Money) object;
     return amount == money.amount
         && getClass().equals(money.getClass());
   }
 
-
-  protected String currency() {
-    return this.currency;
+  public String toString() {
+    return amount + " " + currency;
   }
 }
