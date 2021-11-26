@@ -1,19 +1,11 @@
 package com.codurance;
 
 public class Franc extends Money {
-
-  private final String currency;
-
-  public Franc(int amount) {
-    this.amount = amount;
-    this.currency = "CHF";
+  public Franc(int amount, String currency) {
+    super(amount, currency);
   }
 
   public Money times(int multiplier) {
-    return new Franc(amount * multiplier);
-  }
-
-  public String currency() {
-    return currency;
+    return Money.franc(amount * multiplier);
   }
 }
